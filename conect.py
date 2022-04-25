@@ -1,3 +1,4 @@
+from ipaddress import ip_address
 import socket
 import sys
 import json
@@ -5,7 +6,8 @@ import json
 # Set up a TCP/IP server
 tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
  
-server_address = ('192.168.194.80', 8080)
+server_ip = input("Enter IP address of server: ")
+server_address = (server_ip, 8080)
 tcp_socket.bind(server_address)
  
 # Listen on port 8080 
