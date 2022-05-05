@@ -24,27 +24,32 @@ while True:
         # Receive and dprint data 32 bytes at a time, as long as the client is sending something
         data = b""
         while True:
-            data += connection.recv(92)
+            data += connection.recv(93)
             print("Data", data)
             dataSplit = data.split(b'\n')
             print(dataSplit[0])
             print("Dictionary before parsing: ", dataSplit[0])
-            if dataSplit[0] == b'' or dataSplit[0] == b'}':
+            if len(dataSplit[0]) < 91:
                 data = b""
                 continue
-            dataJson = json.loads(dataSplit[0])
-             
-            # printing all elements of dictionary
-            #print("Dictionary after parsing: ", dataJson)
+            if dataSplit[0] == b'':
+                continue
 
-            #print("Timestamp: ", dataJson['accelerometer']['timestamp'])
-            #print("X: ", dataJson['accelerometer']['value'][0])
-            #print("Y: ", dataJson['accelerometer']['value'][1])
-            #print("G: ", dataJson['accelerometer']['value'][2])
+            try: 
+                dataJson = json.loads(dataSplit[0])
+            except:
+                print("NameError Occurred and Handled")
+            # printing all elements of dictionary
+            print("Dictionary after parsing: ", dataJson)
+
+            print("Timestamp: ", dataJson['accelerometer']['timestamp'])
+            print("X: ", dataJson['accelerometer']['value'][0])
+            print("Y: ", dataJson['accelerometer']['value'][1])
+            print("G: ", dataJson['accelerometer']['value'][2])
  
-            time.sleep(1)
+            #time.sleep(1)
             data = b""
-            if len(dataSplit) == 2:
+            if len(dataSplit) > 1:
                 data += dataSplit[1]
             #if not data:
             #    break
