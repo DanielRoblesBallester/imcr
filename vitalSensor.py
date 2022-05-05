@@ -22,10 +22,10 @@ def build_payload(variable_1, variable_2,  variable_3, variable_4):
     value_2 = math.sin((x / 20)-20) * 5 + 130 + random.uniform(-0.5, 0.5)
 
     # nivel de oxígeno
-    value_3 = math.sin(x * 2) * (1 / 25) + 80
+    value_3 = math.sin(x * 2) * (1 / 25) + 95
 
     # temperatura corporal
-    value_4 = math.sin(x * 2) * (1 / 20) + 36.5
+    value_4 = math.sin(x * 2) * (1 / 20) + 36.8
     
     x += 1
 
