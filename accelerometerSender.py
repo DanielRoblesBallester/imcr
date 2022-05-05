@@ -8,8 +8,8 @@ import math
 
 
 
-TOKEN = "BBFF-aiGyMyKStiyhBl1FL7hIcjBSWWq4ye"  # #########Rellnar########
-DEVICE_LABEL = "machine"  # Put your device label here 
+TOKEN = "BBFF-aiGyMyKStiyhBl1FL7hIcjBSWWq4ye"  # Colocar token aqui
+DEVICE_LABEL = "Acelerometro"  # Put your device label here 
 VARIABLE_LABEL_1 = "X"  # Put your first variable label here
 VARIABLE_LABEL_2 = "Y"  # Put your second variable label here
 VARIABLE_LABEL_3 = "G"  # Put your second variable label here
@@ -19,7 +19,7 @@ VARIABLE_LABEL_3 = "G"  # Put your second variable label here
 # Set up a TCP/IP server
 tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
  
-server_ip = "192.168.120.141" #########Rellnar########
+server_ip = "192.168.120.141" # Colocar ip 
 server_address = (server_ip, 8080)
 tcp_socket.bind(server_address)
  

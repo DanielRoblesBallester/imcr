@@ -10,7 +10,7 @@ VARIABLE_LABEL_2 = "humidity"  # Put your second variable label here
 VARIABLE_LABEL_3 = "position"  # Put your second variable label here
 
 
-def build_payload(variable_1, variable_2,   ):
+def build_payload(variable_1, variable_2,  variable_3 ):
     # Creates two random values for sending data
     value_1 = random.randint(-10, 50)
     value_2 = random.randint(0, 85)
