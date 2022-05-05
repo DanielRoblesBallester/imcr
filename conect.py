@@ -29,9 +29,6 @@ while True:
             dataSplit = data.split(b'\n')
             print(dataSplit[0])
             print("Dictionary before parsing: ", dataSplit[0])
-            if len(dataSplit[0]) < 91:
-                data = b""
-                continue
             if dataSplit[0] == b'':
                 continue
 
@@ -47,7 +44,7 @@ while True:
             print("Y: ", dataJson['accelerometer']['value'][1])
             print("G: ", dataJson['accelerometer']['value'][2])
  
-            #time.sleep(1)
+            time.sleep(0.5)
             data = b""
             if len(dataSplit) > 1:
                 data += dataSplit[1]
