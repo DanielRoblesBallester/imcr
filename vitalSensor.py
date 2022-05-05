@@ -1,6 +1,7 @@
 import time
 import requests
 import math
+import random
 
 TOKEN = "BBFF-aiGyMyKStiyhBl1FL7hIcjBSWWq4ye"  # Put your TOKEN here
 DEVICE_LABEL = "sensor_vital"  # Put your device label here 
@@ -15,10 +16,10 @@ def build_payload(variable_1, variable_2,  variable_3, variable_4):
     global x
 
     # frecuencia cardíaca
-    value_1 = math.sin((x / 20)) * 6 + 65
+    value_1 = math.sin((x / 20)-20) * 6 + 64 + random.uniform(-0.5, 0.5)
 
     # presión arterial
-    value_2 = math.sin((x / 20)) * 5 + 115
+    value_2 = math.sin((x / 20)-20) * 5 + 130 + random.uniform(-0.5, 0.5)
 
     # nivel de oxígeno
     value_3 = math.sin(x * 2) * (1 / 25) + 80
